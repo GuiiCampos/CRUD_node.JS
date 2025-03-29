@@ -17,7 +17,7 @@ export const removeUser = (id) => {
     return
 };
 
-export const updateUser = (id, data) => {
+export const editUser = (id, data) => {
     const user = users.find((user) => user.id === id);
     user.username = data.username;
     user.age = data.age;

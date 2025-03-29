@@ -1,4 +1,4 @@
-import {getUsersData, getUserData, newUser, removeUser, updateUser} from '../models/modelUsers.js'
+import {getUsersData, getUserData, newUser, removeUser, editUser} from '../models/modelUsers.js'
 
 export const getUsers = (req, res) => {
     const users = getUsersData();
@@ -30,8 +30,8 @@ export const deleteUser = (req, res) => {
     res.status(200).send(message)
 };
 
-export const updateUser =  (req,res) => {
-    updateUser(req.params.id, req.body)
+export const updateUser = (req, res) => {
+    editUser(req.params.id, req.body)
     const message = `Usuário alterado para ${req.body.username}. Idade alterada para ${req.body.age}`
     console.log(message);
     res.status(200).send(message)    
